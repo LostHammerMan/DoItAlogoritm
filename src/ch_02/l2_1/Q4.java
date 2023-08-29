@@ -1,0 +1,40 @@
+package ch_02.l2_1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Q4 {
+    public static void main(String[] args) {
+
+        // 배열 b 의 모든 요소를 배열 a 에 복사하는 메서드 copy
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print(" a의 요솟수 : "); int numa = sc.nextInt();
+        int[] a = new int[numa];
+        for (int i=0; i<numa; i++){
+            System.out.print("a[" + i + "] : "); a[i] = sc.nextInt();
+        }
+
+        System.out.println("b의 요솟수 : "); int numb = sc.nextInt();
+        int[] b = new int[numb];
+        for (int i=0; i<numb; i++){
+            System.out.print("b[" + i + "] : "); b[i] = sc.nextInt();
+        }
+        copy(a,b);
+        System.out.println("배열 b의 요소를 a에 copy함");
+        for (int i=0; i <numa; i++){
+            System.out.println("a[" + i + "] = " + a[i]);
+        }
+//        System.out.println("b[] : " + Arrays.toString(b));
+    }
+
+    static void copy(int[] a, int[] b){
+        /*b = a.clone();
+        System.out.println("b[] : " + Arrays.toString(b));*/
+        int num = a.length <= b.length ? a.length : b.length;
+        for (int i=0; i<num; i++){
+            a[i] = b[i];
+        }
+    }
+}
